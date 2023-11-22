@@ -1,11 +1,13 @@
-import Alert from "./components/Alert";
+import Episode from "./components/Episode";
+import Episode1 from "./EpisodeData/EpisodeOne.json";
 
 function App() {
   return (
     <div>
-      <Alert>
-        Hello <span>World</span>
-      </Alert>
+      <Episode
+        background={Episode1[0].scene}
+        character={Episode1[0].character}
+      />
     </div>
   );
 }
