@@ -43,10 +43,12 @@ const CodeQuizCardSet = ({ correctAnswerIndex }) => {
   }, [correctAnswerIndex]);
 
   const handleCardClick = (selectedAnswer) => {
-    // Handle the click event based on the selected answer
-    // You can implement the logic to check if the selected answer is correct
-    // and perform the necessary actions.
-    console.log("Selected Answer:", selectedAnswer);
+    // Check if the selected answer's id is equal to the correct answer index
+    if (selectedAnswer === correctAnswerIndex) {
+      console.log("Correct!");
+    } else {
+      console.log("Incorrect!");
+    }
   };
 
   return (

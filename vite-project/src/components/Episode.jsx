@@ -4,7 +4,7 @@ import Code from "./Code";
 import CodeQuizCardSet from "./CodeQuizCardSet";
 
 const Episode = ({ episodeData }) => {
-  const { scenes, characters, dialogue, codePanel } = episodeData;
+  const { scenes, characters, dialogue, codePanel, codeQuiz } = episodeData;
 
   // Separate indices for each type of asset
   const [sceneIndex, setSceneIndex] = useState(0);
@@ -14,6 +14,9 @@ const Episode = ({ episodeData }) => {
 
   // Main index to progress with each click
   const [mainIndex, setMainIndex] = useState(0);
+
+  // Correct answer index for the current quiz
+  const [correctAnswerIndex, setCorrectAnswerIndex] = useState(0);
 
   // Function to handle click and increment the main index
   const handleDisplayClick = () => {
@@ -48,6 +51,15 @@ const Episode = ({ episodeData }) => {
     ) {
       setCodeIndex((prevIndex) => prevIndex + 1);
     }
+
+    // Check if there is a codeQuiz for the current mainIndex
+    const currentQuiz = codeQuiz.find(
+      ([_, quizIndex]) => quizIndex === mainIndex
+    );
+    if (currentQuiz) {
+      // Set the correct answer index to the first value in the codeQuiz array
+      setCorrectAnswerIndex(currentQuiz[0]);
+    }
   };
 
   return (
@@ -63,7 +75,10 @@ const Episode = ({ episodeData }) => {
         <Code code={codePanel[codeIndex][0]} />
       </div>
       <div>
-        <CodeQuizCardSet correctAnswerIndex={0} />
+        {/* Check if there is a codeQuiz for the current mainIndex */}
+        {codeQuiz.some(([_, quizIndex]) => quizIndex + 1 === mainIndex) && (
+          <CodeQuizCardSet correctAnswerIndex={correctAnswerIndex} />
+        )}
       </div>
     </>
   );
