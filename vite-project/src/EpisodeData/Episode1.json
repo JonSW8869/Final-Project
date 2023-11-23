@@ -1,15 +1,23 @@
 {
     "scenes": [
-        ["./img/Outside-Deli.jpg" , 0]
+        ["./img/Outside-Deli.jpg" , 0],
+        ["./img/forest.jpg" , 5]
     ],
     "characters" : [
         ["./img/character.jpg", 0]
     ],
     "dialogue" : [
-        ["Hi! I am Peter! I am going on an adventure, and you are going to help me! " , 0]
+        ["Hi! I am Peter! I am going on an adventure, and you are going to help me! " , 0],
+        ["I know you can change elements in this world using something called code" , 1],
+        ["This world is made up of c++ code and I will teach you c++" , 3], 
+        ["But... in turn you need to do whatever I say, don't worry it won't affect anything in your reality" , 4],
+        ["First things first, I am hungry right now, assign money variable to me",5],
+        ["Look to the right, I have suggested a name for the variable, choose the correct input from below to correctly assign the variable!", 6]
     ],
     "codes" : [
-        ["___ money" , 0]
+        ["" , 0],
+        ["___ money", 6],
+        ["int money _ ____", 7]
     ]
     
 } 

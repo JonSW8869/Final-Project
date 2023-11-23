@@ -1,32 +1,32 @@
-const Scene = ({ background, character }) => {
+import React from "react";
+import "./Display.css"; // Import your CSS file for additional styling
+
+const Display = ({ background, character, dialogue, onClick }) => {
   return (
-    <div
-      className="card float-left"
-      style={{ position: "relative", width: "60%" }}
-    >
-      <img src={background} className="card-img-top" alt="..." />
-      <div className="card-img-overlay">
-        <img
-          src={character}
-          className="card-img"
-          alt="..."
-          style={{
-            position: "relative",
-            top: "50%",
-            left: "10px",
-            height: "30%",
-            width: "20%",
-          }}
-        />
-      </div>
-      <div>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
+    <div className="container-fluid" onClick={onClick}>
+      <div className="row">
+        <div className="col-lg-12 col-md-8 col-sm-10 mx-auto">
+          <div className="display-card">
+            <img
+              src={background}
+              className="img-fluid display-background"
+              alt="Background"
+            />
+            <div className="character-overlay">
+              <img
+                src={character}
+                className="img-fluid character-image"
+                alt="Character"
+              />
+            </div>
+            <div className="display-text">
+              <p>{dialogue}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Scene;
+export default Display;
