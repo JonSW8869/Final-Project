@@ -14,10 +14,14 @@
         ["First things first, I am hungry right now, assign money variable to me",5],
         ["Look to the right, I have suggested a name for the variable, choose the correct input from below to correctly assign the variable!", 6]
     ],
-    "codes" : [
+    "codePanel" : [
         ["" , 0],
         ["___ money", 6],
         ["int money _ ____", 7]
+    ],
+    "codeQuiz" : [
+        [0, 6],
+        [1, 7]
     ]
     
 } 

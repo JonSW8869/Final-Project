@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "code": "int",
+        "description": "Variable type Integer"
+    },
+    {
+        "id": 2,
+        "code": "=",
+        "description": "An assigning thing"
+    },
+    {
+        "id": 3,
+        "code": "your_code_3",
+        "description": "Description for your_code_3"
+    },
+    {
+        "id": 4,
+        "code": "your_code_4",
+        "description": "Description for your_code_4"
+    },
+    {
+        "id": 5,
+        "code": "your_code_5",
+        "description": "Description for your_code_5"
+    }
+
+  ]
+  

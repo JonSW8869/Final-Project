@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Display from "./Display";
 import Code from "./Code";
+import CodeQuizCardSet from "./CodeQuizCardSet";
 
-const Episode = ({ EpisodeNumber }) => {
-  const { scenes, characters, dialogue, codes } = EpisodeNumber;
+const Episode = ({ episodeData }) => {
+  const { scenes, characters, dialogue, codePanel } = episodeData;
 
   // Separate indices for each type of asset
   const [sceneIndex, setSceneIndex] = useState(0);
@@ -41,22 +42,30 @@ const Episode = ({ EpisodeNumber }) => {
       setDialogueIndex((prevIndex) => prevIndex + 1);
     }
 
-    if (codeIndex + 1 < codes.length && codes[codeIndex + 1][1] === mainIndex) {
+    if (
+      codeIndex + 1 < codePanel.length &&
+      codePanel[codeIndex + 1][1] === mainIndex
+    ) {
       setCodeIndex((prevIndex) => prevIndex + 1);
     }
   };
 
   return (
-    <div style={{ display: "flex" }}>
-      <Display
-        key={mainIndex}
-        background={scenes[sceneIndex][0]}
-        character={characters[characterIndex][0]}
-        dialogue={dialogue[dialogueIndex][0]}
-        onClick={handleDisplayClick}
-      />
-      <Code code={codes[codeIndex][0]} />
-    </div>
+    <>
+      <div style={{ display: "flex" }}>
+        <Display
+          key={mainIndex}
+          background={scenes[sceneIndex][0]}
+          character={characters[characterIndex][0]}
+          dialogue={dialogue[dialogueIndex][0]}
+          onClick={handleDisplayClick}
+        />
+        <Code code={codePanel[codeIndex][0]} />
+      </div>
+      <div>
+        <CodeQuizCardSet correctAnswerIndex={0} />
+      </div>
+    </>
   );
 };
 
