@@ -1,32 +1,16 @@
 import "./Episode.css";
+import Display from "./Display.jsx";
+import Code from "./Code.jsx";
 
-const Episode = ({ background, character }) => {
+const Episode = ({ EpisodeNumber }) => {
+  const scenes = EpisodeNumber.scenes;
+  const characters = EpisodeNumber.characters;
+  const codes = EpisodeNumber.codes;
+
   return (
-    <div
-      className="card d-flex justify-content-center align-items-center"
-      style={{ position: "relative", marginLeft: "20%", width: "60%" }}
-    >
-      <img src={background} className="card-img-top" alt="..." />
-      <div className="card-img-overlay">
-        <img
-          src={character}
-          className="card-img"
-          alt="..."
-          style={{
-            position: "relative",
-            top: "55%",
-            left: "10px",
-            height: "30%",
-            width: "20%",
-          }}
-        />
-      </div>
-      <div>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-      </div>
+    <div style={{ display: "flex" }}>
+      <Display background={scenes[0][0]} character={characters[0][0]} />
+      <Code code={codes[0][0]} />
     </div>
   );
 };

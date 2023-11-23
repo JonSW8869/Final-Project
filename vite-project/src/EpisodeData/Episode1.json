@@ -1,0 +1,15 @@
+{
+    "scenes": [
+        ["./img/Outside-Deli.jpg" , 0]
+    ],
+    "characters" : [
+        ["./img/character.jpg", 0]
+    ],
+    "dialogue" : [
+        ["Hi! I am Peter! I am going on an adventure, and you are going to help me! " , 0]
+    ],
+    "codes" : [
+        ["___ money" , 0]
+    ]
+    
+} 
