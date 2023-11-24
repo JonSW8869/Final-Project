@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 
 import CodeLibrary from "../CodeLibrary.json"; // Import your CodeLibrary.json
 
-const CodeQuizCardSet = ({ correctAnswerIndex }) => {
+const CodeQuizCardSet = ({ correctAnswerIndex, onCorrectAnswerSelected }) => {
   const [quizData, setQuizData] = useState([]);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const CodeQuizCardSet = ({ correctAnswerIndex }) => {
   const handleCardClick = (selectedAnswer) => {
     // Check if the selected answer's id is equal to the correct answer index
     if (selectedAnswer === correctAnswerIndex) {
-      console.log("Correct!");
+      onCorrectAnswerSelected();
     } else {
       console.log("Incorrect!");
     }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Display from "./Display";
 import Code from "./Code";
 import CodeQuizCardSet from "./CodeQuizCardSet";
@@ -15,14 +15,19 @@ const Episode = ({ episodeData }) => {
   // Main index to progress with each click
   const [mainIndex, setMainIndex] = useState(0);
 
-  // Correct answer index for the current quiz
-  const [correctAnswerIndex, setCorrectAnswerIndex] = useState(0);
+  // State to track whether the code quiz is active
+  const [isCodeQuizActive, setIsCodeQuizActive] = useState(false);
 
   // Function to handle click and increment the main index
   const handleDisplayClick = () => {
+    // Check if the code quiz is active, if so, return without advancing
+    if (isCodeQuizActive) {
+      return;
+    }
+
     // Increment the main index
     setMainIndex((prevIndex) => prevIndex + 1);
-
+    console.log(mainIndex);
     // Check and update each asset type if the secondary index matches the main index
     if (
       sceneIndex + 1 < scenes.length &&
@@ -51,16 +56,19 @@ const Episode = ({ episodeData }) => {
     ) {
       setCodeIndex((prevIndex) => prevIndex + 1);
     }
-
-    // Check if there is a codeQuiz for the current mainIndex
-    const currentQuiz = codeQuiz.find(
-      ([_, quizIndex]) => quizIndex === mainIndex
-    );
-    if (currentQuiz) {
-      // Set the correct answer index to the first value in the codeQuiz array
-      setCorrectAnswerIndex(currentQuiz[0]);
-    }
   };
+
+  // Function to handle the selection of the correct answer in the code quiz
+  const handleCorrectAnswerSelected = () => {
+    setIsCodeQuizActive(false);
+    handleDisplayClick();
+  };
+
+  useEffect(() => {
+    if (codeQuiz.some((quiz) => quiz[1] === mainIndex - 1)) {
+      setIsCodeQuizActive(true);
+    }
+  }, [mainIndex, codeQuiz]);
 
   return (
     <>
@@ -75,9 +83,13 @@ const Episode = ({ episodeData }) => {
         <Code code={codePanel[codeIndex][0]} />
       </div>
       <div>
-        {/* Check if there is a codeQuiz for the current mainIndex */}
-        {codeQuiz.some(([_, quizIndex]) => quizIndex + 1 === mainIndex) && (
-          <CodeQuizCardSet correctAnswerIndex={correctAnswerIndex} />
+        {isCodeQuizActive && (
+          <CodeQuizCardSet
+            correctAnswerIndex={
+              codeQuiz.find((quiz) => quiz[1] === mainIndex - 1)[0]
+            }
+            onCorrectAnswerSelected={handleCorrectAnswerSelected}
+          />
         )}
       </div>
     </>
