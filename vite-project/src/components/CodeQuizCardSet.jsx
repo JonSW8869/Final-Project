@@ -46,8 +46,9 @@ const CodeQuizCardSet = ({ correctAnswerIndex, onCorrectAnswerSelected }) => {
     // Check if the selected answer's id is equal to the correct answer index
     if (selectedAnswer === correctAnswerIndex) {
       onCorrectAnswerSelected();
+      alert("Correct! click to continue.");
     } else {
-      console.log("Incorrect!");
+      alert("Wrong! try again.");
     }
   };
 

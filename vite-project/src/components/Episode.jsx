@@ -4,11 +4,13 @@ import Code from "./Code";
 import CodeQuizCardSet from "./CodeQuizCardSet";
 
 const Episode = ({ episodeData }) => {
-  const { scenes, characters, dialogue, codePanel, codeQuiz } = episodeData;
+  const { scenes, characters, sideCharacters, dialogue, codePanel, codeQuiz } =
+    episodeData;
 
   // Separate indices for each type of asset
   const [sceneIndex, setSceneIndex] = useState(0);
   const [characterIndex, setCharacterIndex] = useState(0);
+  const [sideCharacterIndex, setSideCharacterIndex] = useState(0);
   const [dialogueIndex, setDialogueIndex] = useState(0);
   const [codeIndex, setCodeIndex] = useState(0);
 
@@ -42,6 +44,12 @@ const Episode = ({ episodeData }) => {
     ) {
       setCharacterIndex((prevIndex) => prevIndex + 1);
     }
+    if (
+      sideCharacterIndex + 1 < sideCharacters.length &&
+      sideCharacters[sideCharacterIndex + 1][1] === mainIndex
+    ) {
+      setSideCharacterIndex((prevIndex) => prevIndex + 1);
+    }
 
     if (
       dialogueIndex + 1 < dialogue.length &&
@@ -61,7 +69,7 @@ const Episode = ({ episodeData }) => {
   // Function to handle the selection of the correct answer in the code quiz
   const handleCorrectAnswerSelected = () => {
     setIsCodeQuizActive(false);
-    handleDisplayClick();
+    //handleDisplayClick();
   };
 
   useEffect(() => {
@@ -77,6 +85,7 @@ const Episode = ({ episodeData }) => {
           key={mainIndex}
           background={scenes[sceneIndex][0]}
           character={characters[characterIndex][0]}
+          sideCharacter={sideCharacters[sideCharacterIndex][0]}
           dialogue={dialogue[dialogueIndex][0]}
           onClick={handleDisplayClick}
         />

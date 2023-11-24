@@ -1,27 +1,46 @@
 {
     "scenes": [
-        ["./img/Outside-Deli.jpg" , 0],
-        ["./img/forest.jpg" , 5]
+        ["./img/mystic_forest.jpg", 0],
+        ["./img/dragon_cave.jpg", 4],
+        ["./img/magic_bridge.jpg", 6],
+        ["./img/cloud_castle.jpg", 9]
     ],
-    "characters" : [
-        ["./img/character.jpg", 0]
+    "characters": [
+        ["./img/wanderer.jpg", 0]
     ],
-    "dialogue" : [
-        ["Hi! I am Peter! I am going on an adventure, and you are going to help me! " , 0],
-        ["I know you can change elements in this world using something called code" , 1],
-        ["This world is made up of c++ code and I will teach you c++" , 3], 
-        ["But... in turn you need to do whatever I say, don't worry it won't affect anything in your reality" , 4],
-        ["First things first, I am hungry right now, assign money variable to me",5],
-        ["Look to the right, I have suggested a name for the variable, choose the correct input from below to correctly assign the variable!", 6]
+    "sideCharacters": [
+        ["./img/empty.jpg",0],
+        ["./img/spell_caster.jpg", 5]
     ],
-    "codePanel" : [
-        ["" , 0],
-        ["___ money", 6],
-        ["int money _ ____", 7]
+    "dialogue": [
+        ["Wanderer: Greetings, traveler! I am on a quest to uncover the secrets of C++ magic. Care to join me?", 0],
+        ["Wanderer: Today, we shall traverse the Mystic Forest, a realm filled with enchanted syntax and mythical creatures.", 1],
+        ["Wanderer: Behold the ancient script on the right it holds the key to our first enchantment!", 2],
+        ["Wanderer: Your first challenge is to declare 'enchantedWord' with a special syntax to unlock the magic within.", 3],
+        ["Wanderer: Well done, adventurer! Our journey takes us next to the Dragon's Cave, guarded by a code-protected beast.", 4],
+        ["Spell Caster: Fear not, brave one! To enter, concatenate 'fire' and 'breath' into 'firebreath'.", 5],
+        ["Wanderer: Tremendous! As we cross the Magic Bridge, let's transform a number into a magical incantation.", 6],
+        ["Wanderer: Declare 'spellNumber' and enchant it into 'spellString' using the mystical unknown spell.", 7],
+        ["Spell Caster: You're unlocking the secrets! Our final destination is the Cloud Castle, where dreams become code.", 8],
+        ["Wanderer: In the ethereal castle, choose the correct answer to reveal the enchanted creatures. Declare 'mythicalBeing' and display it.", 9],
+        ["Spell Caster: Marvelous! The magical essence flows through you. Let's return to the starting point, enriched with C++ enchantments.", 10],
+        ["Wanderer: Today, we ventured through strings, concatenation, conversion, and output. Until our paths cross again, fellow spellweaver!", 11]
     ],
-    "codeQuiz" : [
-        [0, 6],
-        [1, 7]
+    "codePanel": [
+        ["", 0],
+        ["_____ enchantedWord;", 3],
+        ["string enchantedWord;", 4],
+        ["string fire = 'fire'; string breath = 'breath'; string firebreath = fire ___ breath;", 5],
+        ["string fire = 'fire'; string breath = 'breath'; string firebreath = fire + breath;", 6],
+        ["int spellNumber = 42; string spellString = _______(spellNumber);", 7],
+        ["int spellNumber = 42; string spellString = to_string(spellNumber);", 8],
+        ["string mythicalBeing = 'Majestic Griffin'; ______ << mythicalBeing;", 9],
+        ["string mythicalBeing = 'Majestic Griffin'; cout << mythicalBeing;", 10]
+    ],
+    "codeQuiz": [
+        [4, 3],
+        [6, 5],
+        [11, 7],
+        [9, 9]
     ]
-    
 } 

@@ -1,7 +1,13 @@
 import React from "react";
 import "./Display.css"; // Import your CSS file for additional styling
 
-const Display = ({ background, character, dialogue, onClick }) => {
+const Display = ({
+  background,
+  character,
+  sideCharacter,
+  dialogue,
+  onClick,
+}) => {
   return (
     <div className="container-fluid" onClick={onClick}>
       <div className="row">
@@ -19,6 +25,14 @@ const Display = ({ background, character, dialogue, onClick }) => {
                 alt="Character"
               />
             </div>
+            <div className="sidecharacter-overlay">
+              <img
+                src={sideCharacter}
+                className="img-fluid character-image"
+                alt="SideCharacter"
+              />
+            </div>
+
             <div className="display-text">
               <p>{dialogue}</p>
             </div>
