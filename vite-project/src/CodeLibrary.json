@@ -40,34 +40,59 @@
       "description": "The addition operator used to subtract two values."
     },
     {
-      "id": 7,
+      "id": 8,
       "code": "if",
       "description": "A keyword used to create conditional statements in C++."
     },
     {
-      "id": 8,
+      "id": 9,
       "code": "for",
       "description": "A keyword used to create loops in C++."
     },
     {
-      "id": 9,
+      "id": 10,
       "code": "cout",
       "description": "A standard output stream in C++ used to display information."
     },
     {
-      "id": 10,
+      "id": 11,
       "code": "cin",
       "description": "A standard input stream in C++ used to read input from the user."
     },
     {
-        "id": 11,
-        "code": "to_string()",
-        "description": "Convert inteter to string"
+      "id": 12,
+      "code": "to_string()",
+      "description": "Convert inteter to string"
     },
     {
-      "id": 12,
+      "id": 13,
       "code": "pow(int,int)",
       "description": "returns the power of the first parameter to the second parameter."
+    },
+    {
+      "id": 14,
+      "code": "#include <iostream>",
+      "description": "A header file library that allows for input and output"
+    },
+    {
+      "id": 15,
+      "code": "run",
+      "description": "Activate the ancient script tabulet"
+    },
+    {
+      "id":16,
+      "code": "using namespace std;",
+      "description": "use names for objects and variables from the standard library."
+    },
+    {
+      "id": 17,
+      "code": "int main(){}",
+      "description": "A function that automatically executes"
+    },
+    {
+      "id": 18,
+      "code": "return",
+      "description": "Ends the function and return the values following this keyword"
     }
   ]
   
