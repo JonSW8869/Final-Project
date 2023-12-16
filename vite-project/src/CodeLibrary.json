@@ -1,12 +1,12 @@
 [
     {
       "id": 0,
-      "code": "Yes",
+      "code": "true",
       "description": ""
     },
     {
       "id": 1,
-      "code": "No",
+      "code": "false",
       "description": ""
     },
     {
@@ -36,6 +36,11 @@
     },
     {
       "id": 7,
+      "code": "-",
+      "description": "The addition operator used to subtract two values."
+    },
+    {
+      "id": 7,
       "code": "if",
       "description": "A keyword used to create conditional statements in C++."
     },
@@ -58,6 +63,11 @@
         "id": 11,
         "code": "to_string()",
         "description": "Convert inteter to string"
+    },
+    {
+      "id": 12,
+      "code": "pow(int,int)",
+      "description": "returns the power of the first parameter to the second parameter."
     }
   ]
   

@@ -53,25 +53,32 @@ const CodeQuizCardSet = ({ correctAnswerIndex, onCorrectAnswerSelected }) => {
   };
 
   return (
-    <div className="row">
-      {quizData.map((quiz, index) => (
-        <div
-          key={index}
-          className="col-lg-3 col-md-4 col-sm-6 mb-4"
-          onClick={() => handleCardClick(quiz.id)}
-        >
-          {/* Bootstrap-like card styling */}
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">{quiz.code}</h5>
-              <p className="card-text">{quiz.description}</p>
-              <button type="button" className="btn btn-primary">
-                Select
-              </button>
+    <div className="align-item-stretch d-flex">
+      <div className="row">
+        {quizData.map((quiz, index) => (
+          <div
+            key={index}
+            className="col-lg-3 col-md-4 col-sm-6 mb-4"
+            onClick={() => handleCardClick(quiz.id)}
+          >
+            {/* Bootstrap-like card styling */}
+            <div
+              className="card text-bg-dark border-warning "
+              style={{ borderRadius: "0px", borderWidth: "10px" }}
+            >
+              <div className="card-body">
+                <h5 className="card-title text-warning fw-bold">{quiz.code}</h5>
+                <p className="card-text text-warning fw-bold">
+                  {quiz.description}
+                </p>
+                <button type="button" className="btn btn-primary">
+                  Select
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

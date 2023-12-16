@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Display from "./Display";
 import Code from "./Code";
 import CodeQuizCardSet from "./CodeQuizCardSet";
@@ -6,6 +7,8 @@ import CodeQuizCardSet from "./CodeQuizCardSet";
 const Episode = ({ episodeData }) => {
   const { scenes, characters, sideCharacters, dialogue, codePanel, codeQuiz } =
     episodeData;
+
+  const navigate = useNavigate(); // Access the history object
 
   // Separate indices for each type of asset
   const [sceneIndex, setSceneIndex] = useState(0);
@@ -78,6 +81,11 @@ const Episode = ({ episodeData }) => {
     }
   }, [mainIndex, codeQuiz]);
 
+  // Function to handle going back to the menu
+  const goToMenu = () => {
+    navigate("/menu"); // Navigate to the menu
+  };
+
   return (
     <>
       <div style={{ display: "flex" }}>
@@ -92,6 +100,8 @@ const Episode = ({ episodeData }) => {
         <Code code={codePanel[codeIndex][0]} />
       </div>
       <div>
+        {/* Add a button to go back to the menu */}
+        <button onClick={goToMenu}>Go back to Menu</button>
         {isCodeQuizActive && (
           <CodeQuizCardSet
             correctAnswerIndex={
